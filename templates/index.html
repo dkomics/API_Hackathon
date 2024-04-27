@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styles.css'%}">
+  <title>Random Data</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Random Fact Section -->
+    <div class="card">
+      <h1>Random Fact</h1>
+      <p>{{ fact }}</p>
+      <button class="refresh-btn" onclick="refreshPage()">Refresh</button>
+    </div>
+
+    <!-- Random Student Section -->
+    <div class="card">
+      <h1>Random Student</h1>
+      <p>{{ name }}</p>
+      <button class="refresh-btn" onclick="refreshPage()">Refresh</button>
+    </div>
+
+    <!-- Random Image Section -->
+    <div class="card">
+      <h1>Random Image</h1>
+      <img src="{{ dog }}" alt="Random Dog Image">
+      <button class="refresh-btn" onclick="refreshPage()">Refresh</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to refresh the page
+    function refreshPage() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
